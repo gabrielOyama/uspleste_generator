@@ -13,7 +13,7 @@ def percentage_to_float(x):
             return float(x.replace(',', '.').strip('%')) / 100
         x = float(x)
     except Exception as e:
-        print(e)
+        st.error("errroo")
         return 0
     return x
 
