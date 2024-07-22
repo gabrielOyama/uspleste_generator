@@ -46,7 +46,6 @@ def load_data():
     for nome in nomes:
         try:
             df = pd.read_excel('amostragem_GEM_2015.xlsx', sheet_name=nome)
-            st.error(df)
             if 'id' not in df.columns:
                 st.error(f"A coluna 'id' não está presente na planilha: {nome}")
                 continue
