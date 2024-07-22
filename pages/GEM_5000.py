@@ -43,7 +43,8 @@ def load_data():
 
     xls = pd.ExcelFile('amostragem_GEM_2015.xlsx')
     nomes = xls.sheet_names
-
+    st.error(str(nomes))
+    st.error(df_coordenadas)
     df_consolidado = pd.DataFrame()
     for nome in nomes:
         try:
