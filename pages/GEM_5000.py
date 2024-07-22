@@ -53,10 +53,15 @@ def load_data():
             if 'id' not in df.columns:
                 st.error(f"A coluna 'id' não está presente na planilha: {nome}")
                 continue
+            st.error("ate agr foi")
             df = df.drop_duplicates(subset='id', keep='last')
+            st.error("ate agr foi2")
             df = df.drop(columns=['Z', 'zona'], errors='ignore')
+            st.error("ate agr foi3")
             melted_df = pd.melt(df, id_vars=['id'], var_name='data', value_name=nome)
+            st.error("ate agr foi4")
             melted_df[nome] = melted_df[nome].apply(percentage_to_float)
+            st.error("ate agr foi5")
             if len(df_consolidado) == 0:
                 df_consolidado = melted_df
             else:
